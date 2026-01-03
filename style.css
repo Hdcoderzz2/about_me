@@ -1,0 +1,316 @@
+*{
+    user-select: none;
+}
+body,html,section{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+section#main{
+    background-color: black;
+}
+div#container{
+    color:white;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width:99%;
+    filter: brightness(100%);
+    background-color: black;
+    position:relative;
+    left:1px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+div.bday_container{
+    height:100%;
+    justify-content:flex-end;
+    align-items:center;
+    width:100%;
+    flex-direction: column;
+    display: flex;
+}
+div#container #birthday{
+    max-height:20vh;
+    height: auto;
+    min-width:50%;
+    max-width: max-content;
+    padding: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5px;
+    aspect-ratio: 1/2;
+    box-shadow: 0px 10px 20px black inset;
+    user-select: none;
+    background-image:linear-gradient(to bottom,black,rgb(109, 109, 1));
+    filter: brightness(80%);
+    border-bottom: 2px solid black;
+    color:black;
+    font-size: 1.4em;
+    overflow: hidden;
+    text-align: center;
+    word-wrap: break-word;
+    border-radius: 5%;
+}
+div#container #birthday::first-letter{
+    font-size: 3.5em;
+}
+div#container #tv{
+    height:30vh;
+    width:90%;
+    position: relative;
+    border:10px solid rgb(24, 24, 24);
+    background-color:blue;
+    color:grey;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 1.2em;
+    align-self: center;
+    justify-self: center;
+    font-weight: 200;
+    border-radius: 20px;
+    box-shadow:0px 0px 100px blue;
+}
+span.blinker{
+    color:grey;
+    animation: blink_anim infinite 1s 2s forwards;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1em;
+}
+@keyframes blink_anim{
+    0%{color:grey;}
+    50%{color:transparent}
+    100%{color:grey;}
+}
+div.candle_cont{
+    height:40%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap:1px;
+}
+div.candle_stick{
+    height:50%;
+    width:30px;
+    box-shadow:0px 5px 10px palegoldenrod inset;
+    background-image:linear-gradient(to right,rgb(194, 194, 194),rgb(68, 68, 68),black);
+    border-top-left-radius:5px;
+    animation: fire_light 5s 1s infinite forwards;
+    border-top-right-radius: 5px;
+}
+div.candle_fire{
+    height:50px;
+    width:20px;
+    box-shadow:0px 0px 10px rgb(255, 166, 0) inset,0px 0px 32px rgb(255, 105, 5);;
+    background-color: palegoldenrod;
+    border-bottom-left-radius:100%;
+    border-top-left-radius: 100%;
+    animation: fire 5s 1s infinite forwards;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+@keyframes fire {
+    0%{box-shadow:0px 0px 10px rgb(253, 165, 0) inset,0px 0px 20px rgb(255, 105, 5);}
+    50%{box-shadow:0px 0px 10px rgb(255, 166, 0) inset,0px 0px 40px rgb(255, 105, 5);}
+    100%{box-shadow:0px 0px 10px rgb(255, 166, 0) inset,0px 0px 20px rgb(255, 105, 5);}
+}
+@keyframes fire_light {
+    0%{box-shadow:0px 5px 10px palegoldenrod inset;}
+    50%{box-shadow:0px 5px 20px palegoldenrod inset;}
+    100%{box-shadow:0px 5px 10px palegoldenrod inset;}
+}
+button{
+    cursor: pointer;
+}
+div#container #tv p{
+    letter-spacing: 1px;
+}
+button.console_btn_container-visible{
+    opacity:1;
+}
+button.console_btn{
+    min-height:30px;
+    max-height: max-content;
+    width:auto;
+    border:none;
+    font-size: 0.8em;
+    color:grey;
+    justify-self: center;
+    word-wrap: break-word;
+    align-self: center;
+    outline:2px solid grey;
+    padding:5px;
+    transition: color 0.2s, background-color 0.2s;
+    text-align: center;
+    display: inline-block;
+    background-color: transparent;
+}
+button.console_btn:active{
+    outline:2px inset grey;
+}
+button.console_btn:hover{
+    background-color:grey;
+    color:blue;
+}
+button.console_btn::first-letter{
+    text-transform:capitalize;
+}
+div.console_btn_container{
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s;
+    height:max-content;
+    left:0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    position: absolute;
+    bottom:10px;
+    width:100%;
+    overflow: auto;
+    /*display: grid;*/
+    grid-template-columns: auto auto auto;
+    column-gap:50px;
+    align-items: center;
+}
+dialog#options{
+    border:2px dashed grey;
+    background-color: blue;
+    color:grey;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    height:95%;
+    width:90%;
+    padding: 0px;
+    font-family: monospace;
+    overflow: auto;
+}
+button.cls{
+    height: 2em;
+    width: auto;
+    aspect-ratio: 1/1;
+    border:none;
+    float: right;
+    color:grey;
+    position: sticky;
+    display: block;
+    font-size: 1.2em;
+    outline:none;
+    background-color: transparent;
+    font-weight: bold;
+}
+div.dialog_grid{
+    height:auto;
+    max-height: max-content;
+    width:100%;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap:10px;
+    display: grid;
+}
+div.dialog_grid button{
+    width:50%;
+}
+div.grid3{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+button:disabled{
+    opacity:0.5;
+}
+div#time{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 4em;
+    font-family: monospace;
+    color:red;
+    text-shadow: 0px 0px 5px red;
+}
+@media screen and (min-width: 480px) and (max-width: 604px) {
+    button.console_btn{
+        font-size: 0.5em;
+    }
+    div#time{
+        font-size: 3em;
+    }
+    div#container #birthday{
+        font-size: 1.1em;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 604px) {
+    button.console_btn{
+        font-size: 0.5em;
+    }
+    div#time{
+        font-size: 3em;
+    }
+    div#container #birthday{
+        font-size: 1.1em;
+    }
+}
+@media screen and (min-width: 420px) and (max-width: 479px) {
+    button.console_btn{
+        font-size: 0.4em;
+    }
+    div#time{
+        font-size: 2.3em;
+    }
+    div#container #birthday{
+        height:20vh;
+        width:90%;
+        font-size: 1.1em;
+    }
+}
+@media screen and (min-width: 392px) and (max-width: 419px) {
+    button.console_btn{
+        font-size: 0.4em;
+    }
+    div#container #tv{
+         height:20vh;
+        width:85%;
+    }
+    div#container #tv p{
+        font-size: 0.8em;
+    }
+    div#time{
+        font-size: 1.5em;
+    }
+    div.grid3{
+        justify-content:center;
+    }
+    div#container #birthday{
+        height:12vh;
+        width:90%;
+        font-size: 1.1em;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 395px) {
+    button.console_btn{
+        font-size: 0.25em;
+    }
+    div#container #tv{
+        height:20vh;
+        width:85%;
+    }
+    div#container #tv p{
+        font-size: 0.8em;
+    }
+    div#time{
+        font-size: 1.5em;
+    }
+    div.grid3{
+        justify-content: center;
+    }
+    div#container #birthday{
+        height:12vh;
+        width:90%;
+        font-size: 1.1em;
+    }
+}

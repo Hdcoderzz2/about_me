@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>About Me</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="#">
+    </head>
+    <body onload="typing_effect('greetings')">
+       <section id="main">
+            <div id="container">
+                <div class="bday_container">
+                    <div id="birthday">5<br>Jan</div>
+                    <div class="candle_cont">
+                        <div class="candle_fire"></div>
+                        <div class="candle_stick">
+                        </div>
+                    </div>
+                </div>
+                <div id="tv">
+                 <dialog id="options">
+                    <button class="cls" onclick="cls()">&times;</button><br>
+                    <div class="dialog_grid">
+                        <button class="console_btn" id="btn3" onclick="typing_effect('fav_song')">Favourite song</button>
+                        <button class="console_btn" id="btn4" onclick="typing_effect('age')">Age</button>
+                        <button class="console_btn" id="btn5" onclick="typing_effect('inactive')">Why are you inactive?</button>
+                        <button class="console_btn" id="btn6" onclick="typing_effect('grade')">What grade are you in?</button>
+                        <button class="console_btn" id="btn6" onclick="typing_effect('height')">What is your height?</button>
+                        <button class="console_btn" id="btn6" onclick="typing_effect('bday')">Birthday</button>
+                    </div>
+                </dialog>
+                <p id="text"></p>
+                <br>
+                <div class="console_btn_container" id="btn_container">
+                    <button class="console_btn" id="btn1" onclick="typing_effect('hry')">How its going?</button>
+                    <button class="console_btn" id="btn2" onclick="typing_effect('who')">Who are you?</button>
+                    <button class="console_btn" onclick="more()">...</button>
+                </div>
+                </div>
+                <div class="grid3">
+                    <div id="time"></div>
+                </div>
+            </div>
+       </section>
+        <script src="script.js"></script>
+    </body>
+</html>
